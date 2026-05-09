@@ -1,31 +1,32 @@
-# Manivel R Portfolio
+# Manivel R — Portfolio Website
 
-This workspace now contains a one-page portfolio website for Manivel R.
+This repository contains a simple, static one-page portfolio website for Manivel R.
 
-## Files
-- `index.html` — portfolio homepage
-- `styles.css` — visual styling
-- `profile_pic.jpeg` — profile photo used in the hero section
-- `Manivel_R_Portfolio_Resume.pdf` — downloadable resume PDF
-- `Manivel_R.docx` — downloadable DOCX resume
+## Contents
+- index.html — portfolio homepage
+- styles.css — site styles
+- profile_pic.jpeg — hero/profile image (if present)
+- Manivel_R_Portfolio_Resume.pdf — downloadable resume (if present)
 
-## How to host
+## Quick Start (Local)
+- Open `index.html` in your browser (double-click) to view locally.
+- Or serve locally for correct asset routing:
 
-### Option 1: GitHub Pages
-1. Create a new GitHub repository.
-2. Upload all files from this folder.
-3. Open **Settings → Pages**.
-4. Set the source branch to `main` and folder to `/root`.
-5. Save and wait for the published link.
+	- With Python 3:
 
-### Option 2: Netlify
-1. Go to Netlify.
-2. Drag and drop this folder.
-3. Netlify will generate a live link instantly.
+		```powershell
+		python -m http.server 8000
+		```
 
-### Option 3: Vercel
-1. Import the folder as a static site.
-2. Deploy with the default settings.
+	- Then open http://localhost:8000 in your browser.
 
-## Recommended portfolio link
-Use the hosted `index.html` site as your portfolio URL and keep the PDF resume as the download link.
+## Deploy
+- GitHub Pages: Push the repository and enable Pages in Settings (branch `main`, folder `/root`).
+- Netlify / Vercel: Import the repository and deploy as a static site.
+
+## Notes
+- Keep `index.html` and `styles.css` together at the repository root for simplest hosting.
+- Replace or remove placeholder files (profile image, resume) as needed.
+
+## Contact
+For questions or updates, open an issue or contact the repository maintainer.
