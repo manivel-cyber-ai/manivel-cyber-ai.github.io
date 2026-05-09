@@ -50,7 +50,7 @@ The portfolio includes downloadable resume files in PDF format.
 
 ## 📬 Contact
 - GitHub: https://github.com/manivel-cyber-ai
-- LinkedIn: https://linkedin.com/in/mr.manivel.r
+- LinkedIn: https://linkedin.com/in/mr-manivel-r
 
 ---
 
