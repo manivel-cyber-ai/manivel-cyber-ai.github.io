@@ -42,15 +42,15 @@ This repository contains my personal portfolio website showcasing my projects, s
 Your site will be live at:
 
 ```text
-https://yourusername.github.io/
+https://manivel-cyber-ai.github.io/
 ```
 
 ## 📄 Resume
 The portfolio includes downloadable resume files in PDF format.
 
 ## 📬 Contact
-- GitHub: https://github.com/yourusername
-- LinkedIn: https://linkedin.com/in/yourprofile
+- GitHub: https://github.com/manivel-cyber-ai
+- LinkedIn: https://linkedin.com/in/mr.manivel.r
 
 ---
 
