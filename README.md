@@ -23,7 +23,6 @@ This portfolio was created to showcase my projects, technical skills, and learni
 .
 ├── index.html
 ├── styles.css
-├── script.js
 ├── profile_pic.jpeg
 ├── Manivel_R_Portfolio_Resume.pdf
 └── README.md
@@ -48,7 +47,7 @@ https://manivel-cyber-ai.github.io/
 ```
 
 ## 📄 Resume
-The portfolio includes downloadable resume files in PDF format.
+The portfolio includes a downloadable resume in PDF format.
 
 ## 📬 Contact
 - GitHub: https://github.com/manivel-cyber-ai
