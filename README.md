@@ -1,31 +1,57 @@
-# Manivel R Portfolio
+# Manivel R – Portfolio Website
 
-This workspace now contains a one-page portfolio website for Manivel R.
+This repository contains my personal portfolio website showcasing my projects, skills, resume, and contact information.
 
-## Files
-- `index.html` — portfolio homepage
-- `styles.css` — visual styling
-- `profile_pic.jpeg` — profile photo used in the hero section
-- `Manivel_R_Portfolio_Resume.pdf` — downloadable resume PDF
-- `Manivel_R.docx` — downloadable DOCX resume
+## 🚀 Features
+- Responsive portfolio website
+- About Me section
+- Skills section
+- Project showcase
+- Resume download
+- Contact section
 
-## How to host
+## 🛠️ Technologies Used
+- HTML5
+- CSS3
+- JavaScript
 
-### Option 1: GitHub Pages
-1. Create a new GitHub repository.
-2. Upload all files from this folder.
-3. Open **Settings → Pages**.
-4. Set the source branch to `main` and folder to `/root`.
-5. Save and wait for the published link.
+## 📁 Project Structure
 
-### Option 2: Netlify
-1. Go to Netlify.
-2. Drag and drop this folder.
-3. Netlify will generate a live link instantly.
+```text
+.
+├── index.html
+├── styles.css
+├── script.js
+├── profile_pic.jpeg
+├── Manivel_R_Portfolio_Resume.pdf
+└── README.md
+```
 
-### Option 3: Vercel
-1. Import the folder as a static site.
-2. Deploy with the default settings.
+## 🌐 Hosting with GitHub Pages
 
-## Recommended portfolio link
-Use the hosted `index.html` site as your portfolio URL and keep the PDF resume as the download link.
+1. Create a GitHub repository
+2. Upload all project files
+3. Go to:
+   Settings → Pages
+4. Under “Source”:
+   - Select `Deploy from branch`
+   - Choose `main`
+   - Select `/ (root)`
+5. Save changes
+
+Your site will be live at:
+
+```text
+https://yourusername.github.io/
+```
+
+## 📄 Resume
+The portfolio includes downloadable resume files in PDF format.
+
+## 📬 Contact
+- GitHub: https://github.com/yourusername
+- LinkedIn: https://linkedin.com/in/yourprofile
+
+---
+
+Made with ❤️ by Manivel R
