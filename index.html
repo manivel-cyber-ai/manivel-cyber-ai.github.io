@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -122,36 +122,65 @@
         </article>
       </section>
 
-      <section class="card">
+      <section class="card mb-1 fade-in">
         <div class="section-head">
           <h2>Technical Skills</h2>
           <span>Core tools and concepts</span>
         </div>
-        <div class="chips">
+        
+        <p class="item-title mt-small">Offensive Security & Web App</p>
+        <div class="chips mb-1">
           <span>OWASP Top 10</span>
-          <span>Web App Security</span>
-          <span>OSINT Basics</span>
-          <span>CTF Methodology</span>
-          <span>Kali Linux</span>
-          <span>Linux CLI</span>
-          <span>Bash</span>
-          <span>Nmap</span>
           <span>Burp Suite</span>
-          <span>Wireshark</span>
-          <span>Netcat</span>
           <span>Metasploit</span>
+          <span>John the Ripper</span>
+          <span>Hydra</span>
+          <span>SQLi / XSS / CSRF</span>
+          <span>Penetration Testing</span>
+          <span>OSINT</span>
+        </div>
+
+        <p class="item-title mt-small">Defensive Security & Networking</p>
+        <div class="chips mb-1">
+          <span>Incident Response</span>
+          <span>SIEM (ELK Stack)</span>
+          <span>Wireshark</span>
+          <span>Nmap</span>
+          <span>OpenVAS / Nessus</span>
+          <span>System Hardening</span>
+          <span>Cryptography</span>
+        </div>
+
+        <p class="item-title mt-small">Environment & Scripting</p>
+        <div class="chips">
+          <span>Kali Linux</span>
+          <span>Bash</span>
           <span>Python</span>
-          <span>NumPy</span>
-          <span>Pandas</span>
-          <span>Scikit-learn</span>
-          <span>Matplotlib</span>
           <span>TryHackMe</span>
-          <span>English</span>
-          <span>Tamil</span>
+          <span>CTF Methodology</span>
         </div>
       </section>
 
-      <section class="grid two-up">
+      <section class="card mb-1 fade-in">
+        <div class="section-head">
+          <h2>Experience</h2>
+        </div>
+        <ul class="timeline">
+          <li>
+            <strong>Cybersecurity & Ethical Hacking Intern</strong>
+            <span class="muted">ApexPlanet Software Pvt. Ltd. | Jun 2026 – Aug 2026</span>
+            <span class="desc-text mt-small">
+              • Configured a professional hacking lab with Kali Linux and vulnerable machines (Metasploitable2, DVWA).<br>
+              • Conducted comprehensive network reconnaissance, vulnerability scanning (OpenVAS), and packet analysis (Wireshark).<br>
+              • Exploited OWASP Top 10 vulnerabilities and implemented mitigations like Prepared Statements and CSP.<br>
+              • Executed penetration testing workflows and system hardening procedures, including malware analysis basics.<br>
+              • Culminated in a Capstone Project simulating an Incident Response scenario.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="grid two-up fade-in">
         <article class="card">
           <div class="section-head">
             <h2>CTFs & Community</h2>
@@ -186,6 +215,12 @@
               <span>
                 ML project predicting loan approvals using Logistic Regression with a
                 full preprocessing pipeline and test-set evaluation.
+              </span>
+            </li>
+            <li>
+              <strong>Mini SIEM with ELK Stack</strong>
+              <span>
+                Capstone project: Built a Security Information and Event Management (SIEM) system to detect and respond to simulated attacks.
               </span>
             </li>
           </ul>
