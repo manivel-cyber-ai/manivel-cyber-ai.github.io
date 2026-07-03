@@ -528,6 +528,18 @@ h1 {
   font-size: 1.02rem;
 }
 
+.project-link {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-strong);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .timeline span {
   color: var(--muted);
   line-height: 1.65;
