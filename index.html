@@ -19,185 +19,216 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="profile_pic.jpeg" />
-    <meta name="theme-color" content="#07111f" />
+    <meta name="theme-color" content="#0b0d13" />
     <title>Manivel R | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
+    <div class="bg-field" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
 
-    <main class="page">
-      <section class="hero card">
-        <div class="hero-main">
-          <p class="eyebrow">Cybersecurity • CTF • AI & ML</p>
+    <header class="topnav">
+      <a class="brand" href="#top">Manivel R</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn primary nav-cta" href="Manivel_R_Portfolio_Resume.pdf" target="_blank" rel="noreferrer">
+        Resume
+      </a>
+    </header>
+
+    <main class="page" id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Cybersecurity &middot; CTF &middot; AI &amp; ML</p>
           <h1>Manivel R</h1>
-          <p class="title-role">Aspiring Cybersecurity Analyst</p>
+          <p class="role">Aspiring Cybersecurity Analyst</p>
           <p class="subtitle">
-            AI & ML undergraduate with practical exposure to web security testing,
-            Linux systems, and CTF problem-solving. Focused on security operations,
-            ethical hacking, and continuous learning.
+            AI &amp; ML undergraduate with practical exposure to web security testing, Linux
+            systems, and CTF problem-solving. Focused on security operations, ethical hacking,
+            and continuous learning.
           </p>
-
-          <ul class="hero-points">
-            <li>Hands-on with Kali Linux, Burp Suite, Nmap, and Wireshark</li>
-            <li>Participated in national-level CTF events and security meetups</li>
-            <li>Strong analytical mindset with disciplined troubleshooting</li>
-          </ul>
 
           <div class="hero-actions">
             <a class="btn primary" href="Manivel_R_Portfolio_Resume.pdf" target="_blank" rel="noreferrer">
-              Resume
+              Download Resume
             </a>
-            <a class="btn ghost" href="mailto:mr.manivel.r@gmail.com">Email</a>
+            <a class="btn ghost" href="mailto:mr.manivel.r@gmail.com">Get in Touch</a>
           </div>
 
-          <div class="social-links">
-            <a href="https://github.com/manivel-cyber-ai" target="_blank" rel="noreferrer" title="GitHub">
-              <span class="social-icon">GitHub</span>
-            </a>
-            <a href="https://linkedin.com/in/mr-manivel-r" target="_blank" rel="noreferrer" title="LinkedIn">
-              <span class="social-icon">LinkedIn</span>
-            </a>
-          </div>
-
-          <div class="contact-row">
-            <span>mr.manivel.r@gmail.com</span>
+          <div class="hero-links">
+            <a href="https://github.com/manivel-cyber-ai" target="_blank" rel="noreferrer">GitHub</a>
+            <span class="dot-sep">&middot;</span>
+            <a href="https://linkedin.com/in/mr-manivel-r" target="_blank" rel="noreferrer">LinkedIn</a>
+            <span class="dot-sep">&middot;</span>
             <span>Tiruchirappalli, Tamil Nadu</span>
           </div>
+
+          <ul class="fact-row">
+            <li>
+              <strong>Kali &middot; Burp &middot; Nmap</strong>
+              <span>Hands-on tooling</span>
+            </li>
+            <li>
+              <strong>Top 18%</strong>
+              <span>DCG CBE CTF 2026</span>
+            </li>
+            <li>
+              <strong>2026</strong>
+              <span>Security internship</span>
+            </li>
+          </ul>
         </div>
 
-        <aside class="hero-side">
-          <div class="photo-frame">
+        <div class="hero-photo">
+          <div class="photo-ring" aria-hidden="true"></div>
+          <div class="photo-card">
             <img
-              class="avatar"
               src="profile_pic.jpeg"
-              alt="Professional portrait of Manivel R"
-              width="520"
-              height="620"
+              alt="Portrait of Manivel R"
+              width="420"
+              height="500"
               fetchpriority="high"
               decoding="async"
             />
           </div>
-
-          <div class="profile-summary">
-            <div class="summary-row">
-              <span class="summary-label">Target Role</span>
-              <strong>Cybersecurity Internship</strong>
-            </div>
-            <div class="summary-row">
-              <span class="summary-label">Primary Interest</span>
-              <strong>SOC & Web Application Security</strong>
-            </div>
-            <div class="summary-row">
-              <span class="summary-label">Availability</span>
-              <strong>Open to Internship Opportunities</strong>
-            </div>
-          </div>
-        </aside>
+          <span class="status-pill">Open to internships</span>
+        </div>
       </section>
 
-      <section class="grid two-up">
-        <article class="card">
+      <!-- ABOUT + EDUCATION -->
+      <section class="grid two-up" id="about">
+        <article class="panel reveal">
           <h2>About</h2>
           <p>
-            Computer Science (AI & ML) undergraduate specializing in web application
-            security and ethical hacking. Experienced with Kali Linux, Burp Suite,
-            Nmap, and Python, with practical CTF exposure and a research interest in
-            AI-driven cybersecurity.
+            Computer Science (AI &amp; ML) undergraduate specializing in web application
+            security and ethical hacking. Experienced with Kali Linux, Burp Suite, Nmap, and
+            Python, with practical CTF exposure and a research interest in AI-driven
+            cybersecurity.
+          </p>
+          <p class="mt-md">
+            Analytical problem solving, a security-research mindset, self-driven learning, fast
+            adaptation, and collaborative communication.
           </p>
         </article>
 
-        <article class="card">
+        <article class="panel reveal" id="education" style="animation-delay:.08s">
           <h2>Education</h2>
-          <p class="item-title">B.E. in Computer Science Engineering (AI & ML)</p>
+          <p class="item-title">B.E. — Computer Science Engineering (AI &amp; ML)</p>
           <p>University College of Engineering, BIT Campus, Anna University</p>
-          <p class="muted">Expected 2028 · Tiruchirappalli, Tamil Nadu</p>
+          <p class="muted">Expected 2028 &middot; Tiruchirappalli, Tamil Nadu</p>
+
+          <p class="item-title mt-lg">Certifications</p>
+          <ul class="cert-list">
+            <li>Cisco Networking Academy — Ethical Hacker</li>
+            <li>Cisco Networking Academy — Introduction to Cybersecurity</li>
+          </ul>
         </article>
       </section>
 
-      <section class="card mb-1 fade-in">
+      <!-- SKILLS -->
+      <section class="panel mb reveal" id="skills">
         <div class="section-head">
-          <h2>Technical Skills</h2>
-          <span>Core tools and concepts</span>
-        </div>
-        
-        <p class="item-title mt-small">Offensive Security & Web App</p>
-        <div class="chips mb-1">
-          <span>OWASP Top 10</span>
-          <span>Burp Suite</span>
-          <span>Metasploit</span>
-          <span>John the Ripper</span>
-          <span>Hydra</span>
-          <span>SQLi / XSS / CSRF</span>
-          <span>Penetration Testing</span>
-          <span>OSINT</span>
+          <h2>Skills</h2>
+          <span>What I actually work with</span>
         </div>
 
-        <p class="item-title mt-small">Defensive Security & Networking</p>
-        <div class="chips mb-1">
-          <span>Incident Response</span>
-          <span>SIEM (ELK Stack)</span>
-          <span>Wireshark</span>
-          <span>Nmap</span>
-          <span>OpenVAS / Nessus</span>
-          <span>System Hardening</span>
-          <span>Cryptography</span>
-        </div>
-
-        <p class="item-title mt-small">Environment & Scripting</p>
-        <div class="chips">
+        <p class="item-title mt-sm">OS &amp; Environment</p>
+        <div class="chips mb-sm">
           <span>Kali Linux</span>
-          <span>Bash</span>
-          <span>Python</span>
-          <span>TryHackMe</span>
+          <span>Linux CLI</span>
+          <span>Bash Scripting</span>
+        </div>
+
+        <p class="item-title mt-sm">Security Tools</p>
+        <div class="chips mb-sm">
+          <span>Nmap</span>
+          <span>Burp Suite</span>
+          <span>Wireshark</span>
+          <span>Netcat</span>
+          <span>Metasploit</span>
+        </div>
+
+        <p class="item-title mt-sm">Security Concepts</p>
+        <div class="chips mb-sm">
+          <span>OWASP Top 10</span>
+          <span>Web Application Security</span>
+          <span>OSINT</span>
           <span>CTF Methodology</span>
+        </div>
+
+        <p class="item-title mt-sm">Programming &amp; Data</p>
+        <div class="chips mb-sm">
+          <span>Python</span>
+          <span>NumPy</span>
+          <span>Pandas</span>
+          <span>Scikit-learn</span>
+          <span>Matplotlib</span>
+        </div>
+
+        <p class="item-title mt-sm">Dev Tools &amp; Platforms</p>
+        <div class="chips">
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>TryHackMe</span>
+          <span>MS Office</span>
         </div>
       </section>
 
-      <section class="card mb-1 fade-in">
+      <!-- EXPERIENCE -->
+      <section class="panel mb reveal" id="experience">
         <div class="section-head">
           <h2>Experience</h2>
         </div>
         <ul class="timeline">
           <li>
-            <strong>Cybersecurity & Ethical Hacking Intern</strong>
-            <span class="muted">ApexPlanet Software Pvt. Ltd. | Jun 2026 – Aug 2026</span>
-            <span class="desc-text mt-small">
-              • Configured a professional hacking lab with Kali Linux and vulnerable machines (Metasploitable2, DVWA).<br>
-              • Conducted comprehensive network reconnaissance, vulnerability scanning (OpenVAS), and packet analysis (Wireshark).<br>
-              • Exploited OWASP Top 10 vulnerabilities and implemented mitigations like Prepared Statements and CSP.<br>
-              • Executed penetration testing workflows and system hardening procedures, including malware analysis basics.<br>
-              • Culminated in a Capstone Project simulating an Incident Response scenario.
+            <strong>Cybersecurity &amp; Ethical Hacking Intern</strong>
+            <span class="muted">ApexPlanet Software Pvt. Ltd. &middot; Jun 2026 – Aug 2026</span>
+            <span class="desc-text mt-sm">
+              Configured a professional hacking lab with Kali Linux and vulnerable machines
+              (Metasploitable2, DVWA). Conducted network reconnaissance, vulnerability scanning
+              with OpenVAS, and packet analysis with Wireshark. Exploited OWASP Top 10
+              vulnerabilities and implemented mitigations like prepared statements and CSP.
+              Executed penetration testing workflows and system hardening procedures, including
+              malware analysis basics. Culminated in a capstone project simulating an incident
+              response scenario.
             </span>
           </li>
         </ul>
       </section>
 
-      <section class="grid two-up fade-in">
-        <article class="card">
+      <!-- CTF + PROJECTS -->
+      <section class="grid two-up reveal">
+        <article class="panel">
           <div class="section-head">
-            <h2>CTFs & Community</h2>
+            <h2>CTFs &amp; Community</h2>
           </div>
           <ul class="timeline">
             <li>
               <strong>DCG CBE CTF 2026</strong>
-              <span>Competed against 500+ teams at Kumaraguru College of Technology, Coimbatore; finished in the top 18%.</span>
+              <span>Competed against 500+ teams at Kumaraguru College of Technology, Coimbatore; ranked 90th (top 18%).</span>
             </li>
             <li>
               <strong>DCG Coimbatore Chapter Meetup 2026</strong>
-              <span>Attended cybersecurity sessions and networked with industry professionals at KCT, Coimbatore.</span>
+              <span>Attended cybersecurity sessions and networked with industry professionals at the DEF CON Group Coimbatore chapter event.</span>
             </li>
           </ul>
         </article>
 
-        <article class="card">
+        <article class="panel" id="projects" style="animation-delay:.08s">
           <div class="section-head">
             <h2>Projects</h2>
           </div>
@@ -205,38 +236,56 @@
             <li>
               <strong>AdaptShield</strong>
               <span>
-                Adversarial self-learning firewall using Red Agent (AI attacker) and Blue
-                Agent (AI defender) in a closed loop, built in Python with AI/ML.
-                Currently in active development.
+                Adversarial self-learning firewall using a Red Agent (AI attacker) and Blue
+                Agent (AI defender) in a closed loop, built in Python with AI/ML. Currently in
+                active development.
               </span>
             </li>
             <li>
               <strong>Loan Approval Prediction System</strong>
               <span>
-                ML project predicting loan approvals using Logistic Regression with a
-                full preprocessing pipeline and test-set evaluation.
+                ML project predicting loan approvals using Logistic Regression with a full
+                preprocessing pipeline and test-set evaluation.
               </span>
             </li>
             <li>
               <strong>Mini SIEM with ELK Stack</strong>
               <span>
-                Capstone project: Built a Security Information and Event Management (SIEM) system to detect and respond to simulated attacks.
+                Capstone project: built a Security Information and Event Management (SIEM)
+                system to detect and respond to simulated attacks.
               </span>
             </li>
           </ul>
         </article>
       </section>
 
-      <section class="card bottom">
+      <!-- CONTACT / FOOTER -->
+      <footer class="panel reveal" id="contact">
         <div class="section-head">
-          <h2>Core Strengths</h2>
-          <span>Value I bring to teams</span>
+          <h2>Contact</h2>
+          <span>Open to internship opportunities</span>
         </div>
-        <p>
-          Analytical problem solving, security-research mindset, self-driven learning,
-          fast adaptation, and collaborative communication.
-        </p>
-      </section>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:mr.manivel.r@gmail.com">
+            <span class="contact-key">Email</span>
+            <span class="contact-val">mr.manivel.r@gmail.com</span>
+          </a>
+          <a class="contact-item" href="https://github.com/manivel-cyber-ai" target="_blank" rel="noreferrer">
+            <span class="contact-key">GitHub</span>
+            <span class="contact-val">manivel-cyber-ai</span>
+          </a>
+          <a class="contact-item" href="https://linkedin.com/in/mr-manivel-r" target="_blank" rel="noreferrer">
+            <span class="contact-key">LinkedIn</span>
+            <span class="contact-val">mr-manivel-r</span>
+          </a>
+          <div class="contact-item static">
+            <span class="contact-key">Location</span>
+            <span class="contact-val">Tiruchirappalli, Tamil Nadu</span>
+          </div>
+        </div>
+      </footer>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
