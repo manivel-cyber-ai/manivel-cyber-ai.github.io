@@ -1,10 +1,108 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// The site is fully silent — no Web Audio, no speech synthesis, no sound toggle.
+// --- Audio: silent by default. No looping "music" or synthesized speech —
+// just an optional, very quiet two-tone confirmation chime on entry, and an
+// optional soft ambient bed the visitor can turn on/off from the nav.
+// To swap in your own voice-over later, drop an audio file (e.g. voice-intro.mp3)
+// next to this script and play it inside playEntryChime() using an <audio> element.
 const introScreen = document.querySelector(".intro-screen");
 const enterButton = document.querySelector(".intro-enter");
+const soundToggle = document.querySelector(".sound-toggle");
+
+let soundEnabled = false;
+let audioContext;
+let ambientSource;
+let ambientGain;
+let ambientFilter;
+
+const getAudioContext = async () => {
+  const AudioEngine = window.AudioContext || window.webkitAudioContext;
+  if (!AudioEngine) return null;
+  audioContext ||= new AudioEngine();
+  if (audioContext.state === "suspended") await audioContext.resume();
+  return audioContext;
+};
+
+// A short, clean "access granted" confirmation — two soft sine tones, ~0.4s total.
+// Plays once on entry regardless of the ambient toggle below (it's brief enough not to need one).
+const playEntryChime = async () => {
+  const context = await getAudioContext();
+  if (!context) return;
+  const now = context.currentTime;
+  [392, 587.33].forEach((frequency, index) => {
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    oscillator.type = "sine";
+    oscillator.frequency.value = frequency;
+    gain.gain.setValueAtTime(0.0001, now + index * 0.14);
+    gain.gain.exponentialRampToValueAtTime(0.08, now + index * 0.14 + 0.03);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + index * 0.14 + 0.4);
+    oscillator.connect(gain).connect(context.destination);
+    oscillator.start(now + index * 0.14);
+    oscillator.stop(now + index * 0.14 + 0.42);
+  });
+};
+
+// A near-inaudible ambient bed — a single filtered low drone, well under
+// typical "background music" loudness, meant to sit behind reading, not compete with it.
+const buildAmbientBuffer = (context) => {
+  const duration = 20;
+  const sampleRate = context.sampleRate;
+  const frameCount = Math.floor(sampleRate * duration);
+  const buffer = context.createBuffer(2, frameCount, sampleRate);
+  const left = buffer.getChannelData(0);
+  const right = buffer.getChannelData(1);
+  for (let index = 0; index < frameCount; index += 1) {
+    const time = index / sampleRate;
+    const fade = Math.min(time / 1.5, (duration - time) / 1.5, 1);
+    const drift = Math.sin(Math.PI * 2 * 0.05 * time) * 3;
+    const drone = Math.sin(Math.PI * 2 * (98 + drift) * time) * 0.5 + Math.sin(Math.PI * 2 * (147 + drift) * time) * 0.28;
+    const sample = drone * fade * 0.05;
+    left[index] = sample;
+    right[index] = sample * 0.96;
+  }
+  return buffer;
+};
+
+const stopAmbient = () => {
+  if (ambientSource) {
+    try { ambientSource.stop(); } catch (error) { /* already stopped */ }
+    ambientSource.disconnect();
+    ambientSource = undefined;
+  }
+  if (ambientFilter) { ambientFilter.disconnect(); ambientFilter = undefined; }
+  if (ambientGain) { ambientGain.disconnect(); ambientGain = undefined; }
+};
+
+const startAmbient = async () => {
+  if (!soundEnabled) return;
+  const context = await getAudioContext();
+  if (!context) return;
+  stopAmbient();
+  ambientFilter = context.createBiquadFilter();
+  ambientFilter.type = "lowpass";
+  ambientFilter.frequency.value = 420;
+  ambientGain = context.createGain();
+  ambientGain.gain.value = 0.5;
+  ambientSource = context.createBufferSource();
+  ambientSource.buffer = buildAmbientBuffer(context);
+  ambientSource.loop = true;
+  ambientSource.connect(ambientFilter).connect(ambientGain).connect(context.destination);
+  ambientSource.start();
+};
+
+const setSoundEnabled = (value) => {
+  soundEnabled = value;
+  soundToggle.setAttribute("aria-pressed", String(soundEnabled));
+  soundToggle.setAttribute("aria-label", soundEnabled ? "Turn ambient sound off" : "Turn ambient sound on");
+  if (soundEnabled) startAmbient();
+  else stopAmbient();
+};
+
+soundToggle.addEventListener("click", () => setSoundEnabled(!soundEnabled));
 
 const finishIntro = () => {
+  playEntryChime();
   document.body.classList.remove("intro-active");
   introScreen.classList.add("is-leaving");
   window.setTimeout(() => introScreen.remove(), 950);
