@@ -1,67 +1,66 @@
-# Manivel R — Portfolio Website
+# Manivel R — Cybersecurity Portfolio
 
-Personal portfolio website showcasing my projects, technical skills, and learning journey in
-Cybersecurity and AI & ML. Currently pursuing a B.E. in Computer Science Engineering (AI & ML).
+A cinematic, responsive portfolio for Manivel R, a Computer Science (AI & ML) undergraduate focused on ethical hacking, web security, CTFs, and AI-driven defense.
 
-**Live site:** https://manivel-cyber-ai.github.io/
+**Live site:** [manivel-cyber-ai.github.io](https://manivel-cyber-ai.github.io/)
 
-## 🚀 Features
+## Highlights
 
-- Responsive, single-page portfolio
-- About & education section
-- Skills, grouped by category (tools, concepts, programming, platforms)
-- Experience and CTF/community timeline
-- Project showcase
-- Downloadable resume (PDF)
-- Contact section with direct links
+- Crimson red bento-card design system with custom SVG iconography
+- Animated opening sequence introducing Manivel R, with an optional browser-generated sound and spoken welcome
+- Interactive profile portrait with scan lines, moving highlight, labels, orbit elements, and an internship status stamp
+- Motion-rich but accessible interactions: scroll reveals, animated project artwork, cursor glow, 3D card tilt, progress indicator, and a security-network canvas
+- Responsive layouts for desktop, tablet, and mobile
+- `prefers-reduced-motion` support disables non-essential animation and skips the opening screen
+- Portfolio content covering skills, CTF achievement, internship work, certifications, projects, and contact links
 
-## 🛠️ Technologies Used
+## Technology
 
 - HTML5
-- CSS3 (custom properties, grid/flexbox, scroll-triggered animation)
-- Vanilla JavaScript (`IntersectionObserver` for scroll reveals, smooth-scroll navigation)
+- CSS3 — custom properties, Grid, Flexbox, keyframe animation, responsive media queries
+- Vanilla JavaScript — Web Audio API, Speech Synthesis API, `IntersectionObserver`, Canvas API
 
-## 📁 Project Structure
+No frameworks, build step, or third-party icon library is required.
+
+## Run locally
+
+Open `index.html` directly in a modern browser, or serve this directory locally:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.
+
+## Sound and accessibility
+
+Browsers do not allow websites to autoplay audio. The opening screen therefore offers **Enter with sound** and **Enter silently**. The sound option plays a generated intro track plus a browser voice introduction; no audio recording is stored in this repository.
+
+Users with a reduced-motion preference bypass the opening sequence and all decorative motion is minimized.
+
+## Project structure
 
 ```text
 .
-├── index.html
-├── styles.css
-├── script.js
-├── profile_pic.jpeg
-├── Manivel_R_Portfolio_Resume.pdf
+├── index.html                         # Main portfolio
+├── styles.css                         # Visual system, layout, and animations
+├── script.js                          # Opening sequence, sound, interaction, and canvas effects
+├── profile_pic.jpeg                   # Profile image
+├── Manivel_R_Portfolio_Resume.html    # Print-ready resume page
 └── README.md
 ```
 
-## 🌐 Hosting with GitHub Pages
+## GitHub Pages deployment
 
-1. Create a GitHub repository.
-2. Upload all project files.
-3. Go to **Settings → Pages**.
-4. Under **Source**:
-   - Select `Deploy from branch`
-   - Choose `main`
-   - Select `/ (root)`
-5. Save changes.
+1. Push the repository to GitHub.
+2. Open **Settings → Pages**.
+3. Set the source to **Deploy from a branch**.
+4. Choose the `main` branch and the `/ (root)` folder.
+5. Save. GitHub Pages will publish the site at the live URL above.
 
-Your site will be live at:
+## Contact
 
-```text
-https://manivel-cyber-ai.github.io/
-```
-
-## 📄 Resume
-
-The portfolio includes a downloadable resume in PDF format, kept in sync with the skills and
-experience listed on the site.
-
-## 📬 Contact
-
-- Email: mr.manivel.r@gmail.com
-- GitHub: https://github.com/manivel-cyber-ai
-- LinkedIn: https://linkedin.com/in/mr-manivel-r
+- Email: [mr.manivel.r@gmail.com](mailto:mr.manivel.r@gmail.com)
+- GitHub: [manivel-cyber-ai](https://github.com/manivel-cyber-ai)
+- LinkedIn: [mr-manivel-r](https://linkedin.com/in/mr-manivel-r)
 - Location: Tiruchirappalli, Tamil Nadu
-
----
-
-Made with care by Manivel R
