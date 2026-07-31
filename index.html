@@ -28,11 +28,15 @@
       <symbol id="linkedin" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13.3a2.3 2.3 0 0 1 4.6 0V16"/></symbol>
       <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></symbol>
       <symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+      <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+      <symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
     </svg>
     <div class="scroll-progress" aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="noise" aria-hidden="true"></div>
-    <div class="background" aria-hidden="true"><canvas class="network-canvas"></canvas><i class="orb orb-one"></i><i class="orb orb-two"></i></div>
+    <div class="background" aria-hidden="true"><canvas class="network-canvas"></canvas><i class="orb orb-one"></i><i class="orb orb-two"></i><i class="orb orb-three"></i></div>
     <section class="intro-screen" aria-label="Portfolio introduction">
       <div class="intro-grid" aria-hidden="true"></div>
       <p class="intro-code">// ACCESS GRANTED · 2026</p>
@@ -47,12 +51,23 @@
         <div class="nav-links">
           <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
         </div>
-        <div class="nav-actions"><a class="nav-resume" href="Manivel_R_Portfolio_Resume.html" target="_blank" rel="noreferrer">Resume <svg><use href="#arrow" /></svg></a></div>
+        <div class="nav-actions">
+          <a class="nav-resume" href="Manivel_R_Portfolio_Resume.html" target="_blank" rel="noreferrer">Resume <svg><use href="#arrow" /></svg></a>
+          <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="icon-open"><use href="#menu" /></svg><svg class="icon-close"><use href="#close" /></svg>
+          </button>
+        </div>
       </nav>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+        <a class="mobile-resume" href="Manivel_R_Portfolio_Resume.html" target="_blank" rel="noreferrer">Resume <svg><use href="#arrow" /></svg></a>
+      </div>
     </header>
+    <div class="mobile-menu-scrim" aria-hidden="true"></div>
 
     <main id="top">
       <section class="hero-stage">
+      <div class="hero-spotlight" aria-hidden="true"></div>
       <div class="hero page-width">
         <div class="hero-copy">
           <p class="eyebrow"><span></span> Cybersecurity portfolio · 2026</p>
@@ -74,7 +89,7 @@
       <section class="bento page-width" id="about">
         <article class="card intro-card reveal"><p class="card-kicker">01 / ABOUT ME</p><div class="icon-box"><svg><use href="#shield" /></svg></div><h2>A curious mind for a connected world.</h2><p>Focused on web application security and ethical hacking, with hands-on practice in Linux, CTFs, and security research.</p><div class="marquee"><span>THINK · TEST · HARDEN · REPEAT · THINK · TEST · HARDEN · REPEAT ·</span></div></article>
         <article class="card education-card reveal"><p class="card-kicker">EDUCATION</p><h3>B.E. Computer Science Engineering <em>(AI &amp; ML)</em></h3><p>University College of Engineering, BIT Campus, Anna University</p><strong>Expected 2028</strong><div class="corner-mark">EDU<br />// 01</div></article>
-        <article class="card stat-card red reveal"><span>CTF RANK</span><strong>TOP<br />18%</strong><p>90th of 500+ teams<br />DCG CBE CTF 2026</p><svg class="giant-icon"><use href="#trophy" /></svg></article>
+        <article class="card stat-card red reveal"><span>CTF RANK</span><strong>TOP<br /><span class="counter" data-target="18">0</span>%</strong><p>90th of 500+ teams<br />DCG CBE CTF 2026</p><svg class="giant-icon"><use href="#trophy" /></svg></article>
         <article class="card quote-card reveal"><svg><use href="#terminal" /></svg><p>“Learn the system. Question the surface. Secure what matters.”</p><span>— MANIVEL R</span></article>
       </section>
 
@@ -93,13 +108,14 @@
 
       <section class="section-heading page-width" id="projects"><p>04 / SELECTED WORK</p><h2>Ideas under pressure<span>.</span></h2></section>
       <section class="projects page-width">
-        <article class="project-card project-red reveal"><div><div class="kicker-row"><p class="card-kicker">ACTIVE DEVELOPMENT</p><span class="status-pill"><i></i>Work in progress</span></div><h3>AdaptShield</h3><p>Adversarial self-learning firewall: Red and Blue AI agents learning in a closed loop for adaptive defense.</p><a href="https://github.com/manivel-cyber-ai/AdaptShield" target="_blank" rel="noreferrer">View repo — code in progress <svg><use href="#arrow" /></svg></a></div><div class="project-art shield-art"><svg><use href="#shield" /></svg><i></i><i></i></div><span class="project-stack">PYTHON · AI/ML</span></article>
-        <article class="project-card project-light reveal"><div><p class="card-kicker">CAPSTONE</p><h3>CyberRecon Agent</h3><p>Security recon and reporting workflow that automates an initial network scan and produces clear Markdown reports.</p><a href="https://github.com/manivel-cyber-ai/cyberrecon-agent" target="_blank" rel="noreferrer">View project <svg><use href="#arrow" /></svg></a></div><div class="project-art radar-art"><svg><use href="#radar" /></svg></div><span class="project-stack">PYTHON · NMAP · MCP</span></article>
-        <article class="project-card project-dark reveal"><div><p class="card-kicker">LEARNING SYSTEM</p><h3>SecureLearn Agent</h3><p>Multi-agent cybersecurity education assistant for structured learning, CTF guidance, quizzes, and progress tracking.</p><a href="https://github.com/manivel-cyber-ai/SecureLearnAgent" target="_blank" rel="noreferrer">View project <svg><use href="#arrow" /></svg></a></div><div class="code-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><span class="project-stack">GOOGLE ADK · GEMINI · MCP</span></article>
+        <article class="project-card project-red reveal"><div><div class="kicker-row"><p class="card-kicker">ACTIVE DEVELOPMENT</p><span class="status-pill"><i></i>Work in progress</span></div><h3>AdaptShield</h3><p>Adversarial self-learning firewall: Red and Blue AI agents learning in a closed loop for adaptive defense.</p><a class="repo-link" href="https://github.com/manivel-cyber-ai/AdaptShield" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View repo — code in progress</a></div><div class="project-art shield-art"><svg><use href="#shield" /></svg><i></i><i></i></div><span class="project-stack"><span class="tech-chip">PYTHON</span><span class="tech-chip">AI/ML</span></span></article>
+        <article class="project-card project-light reveal"><div><p class="card-kicker">CAPSTONE</p><h3>CyberRecon Agent</h3><p>Security recon and reporting workflow that automates an initial network scan and produces clear Markdown reports.</p><a class="repo-link" href="https://github.com/manivel-cyber-ai/cyberrecon-agent" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View project</a></div><div class="project-art radar-art"><svg><use href="#radar" /></svg></div><span class="project-stack"><span class="tech-chip">PYTHON</span><span class="tech-chip">NMAP</span><span class="tech-chip">MCP</span></span></article>
+        <article class="project-card project-dark reveal"><div><p class="card-kicker">LEARNING SYSTEM</p><h3>SecureLearn Agent</h3><p>Multi-agent cybersecurity education assistant for structured learning, CTF guidance, quizzes, and progress tracking.</p><a class="repo-link" href="https://github.com/manivel-cyber-ai/SecureLearnAgent" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View project</a></div><div class="code-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><span class="project-stack"><span class="tech-chip">GOOGLE ADK</span><span class="tech-chip">GEMINI</span><span class="tech-chip">MCP</span></span></article>
       </section>
 
-      <footer class="footer page-width" id="contact"><div><p class="card-kicker">05 / GET IN TOUCH</p><h2>Let’s build<br /><em>safer</em> things.</h2></div><a class="contact-email" href="mailto:mr.manivel.r@gmail.com"><svg><use href="#mail" /></svg><span>mr.manivel.r@gmail.com</span><svg><use href="#arrow" /></svg></a><p class="footer-note">© 2026 MANIVEL R · DESIGNED WITH INTENT · <a href="https://github.com/manivel-cyber-ai/manivel-cyber-ai.github.io" target="_blank" rel="noreferrer">SOURCE ON GITHUB</a></p></footer>
+      <footer class="footer page-width" id="contact"><div><p class="card-kicker">05 / GET IN TOUCH</p><h2>Let’s build<br /><em>safer</em> things.</h2></div><div class="contact-row"><a class="contact-email" href="mailto:mr.manivel.r@gmail.com"><svg><use href="#mail" /></svg><span>mr.manivel.r@gmail.com</span><svg><use href="#arrow" /></svg></a><button class="copy-email-btn" type="button" data-email="mr.manivel.r@gmail.com" aria-label="Copy email address"><svg class="icon-copy"><use href="#copy" /></svg><svg class="icon-check"><use href="#check" /></svg></button></div><p class="footer-note">© 2026 MANIVEL R · DESIGNED WITH INTENT · <a href="https://github.com/manivel-cyber-ai/manivel-cyber-ai.github.io" target="_blank" rel="noreferrer">SOURCE ON GITHUB</a></p></footer>
     </main>
+    <div class="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>
 </html>

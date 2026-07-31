@@ -5,6 +5,7 @@ const enterButton = document.querySelector(".intro-enter");
 
 const finishIntro = () => {
   document.body.classList.remove("intro-active");
+  document.body.classList.add("hero-ready");
   introScreen.classList.add("is-leaving");
   window.setTimeout(() => introScreen.remove(), 950);
 };
@@ -23,6 +24,7 @@ if (!reducedMotion) {
   window.addEventListener("keydown", handleIntroKey);
 } else {
   introScreen.remove();
+  document.body.classList.add("hero-ready");
 }
 
 let scrollProgressTicking = false;
@@ -191,4 +193,117 @@ if (!reducedMotion) {
   };
   configure(); render();
   window.addEventListener("resize", () => { cancelAnimationFrame(animationFrame); configure(); render(); }, { passive: true });
+}
+
+// Nav glass intensifies once the page has scrolled past the hero edge.
+const navWrap = document.querySelector(".nav-wrap");
+if (navWrap) {
+  let navTicking = false;
+  const updateNavState = () => {
+    navWrap.classList.toggle("scrolled", window.scrollY > 24);
+    navTicking = false;
+  };
+  window.addEventListener("scroll", () => {
+    if (navTicking) return;
+    navTicking = true;
+    window.requestAnimationFrame(updateNavState);
+  }, { passive: true });
+  updateNavState();
+}
+
+// Mobile menu: hamburger toggle with a slide-out glass panel.
+const navToggle = document.querySelector(".nav-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileScrim = document.querySelector(".mobile-menu-scrim");
+if (navToggle && mobileMenu && mobileScrim) {
+  const closeMenu = () => {
+    navToggle.setAttribute("aria-expanded", "false");
+    mobileMenu.classList.remove("open");
+    mobileScrim.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  };
+  const openMenu = () => {
+    navToggle.setAttribute("aria-expanded", "true");
+    mobileMenu.classList.add("open");
+    mobileScrim.classList.add("open");
+    document.body.classList.add("menu-open");
+  };
+  navToggle.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("open")) closeMenu(); else openMenu();
+  });
+  mobileScrim.addEventListener("click", closeMenu);
+  mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  window.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+  window.addEventListener("resize", () => { if (window.innerWidth > 620) closeMenu(); }, { passive: true });
+}
+
+// Hero spotlight follows the pointer across the red hero stage.
+const heroStage = document.querySelector(".hero-stage");
+if (heroStage && !reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  heroStage.addEventListener("pointermove", (event) => {
+    const bounds = heroStage.getBoundingClientRect();
+    heroStage.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
+    heroStage.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
+  });
+}
+
+// Count up the CTF-rank stat once it scrolls into view.
+const counters = document.querySelectorAll(".counter");
+if (counters.length) {
+  const animateCounter = (element) => {
+    const target = parseInt(element.dataset.target, 10) || 0;
+    if (reducedMotion) { element.textContent = target; return; }
+    const duration = 1100;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(step); else element.textContent = target;
+    };
+    requestAnimationFrame(step);
+  };
+  if ("IntersectionObserver" in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .6 });
+    counters.forEach((counter) => counterObserver.observe(counter));
+  } else {
+    counters.forEach(animateCounter);
+  }
+}
+
+// Copy email to clipboard with a toast confirmation, alongside the existing mailto link.
+const copyButton = document.querySelector(".copy-email-btn");
+const toast = document.querySelector(".toast");
+let toastTimer;
+const showToast = (message) => {
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  window.clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => toast.classList.remove("show"), 2400);
+};
+if (copyButton) {
+  copyButton.addEventListener("click", async () => {
+    const email = copyButton.dataset.email;
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch (error) {
+      showToast("Copy failed — email is above ↑");
+      return;
+    }
+    copyButton.classList.add("copied");
+    copyButton.setAttribute("aria-label", "Email copied");
+    showToast("Email copied to clipboard");
+    window.setTimeout(() => {
+      copyButton.classList.remove("copied");
+      copyButton.setAttribute("aria-label", "Copy email address");
+    }, 2200);
+  });
 }
