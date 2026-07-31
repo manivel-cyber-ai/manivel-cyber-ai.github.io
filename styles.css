@@ -514,3 +514,77 @@ to{opacity:1;transform:translateY(-50%) rotate(6deg)}
 .project-red{background:linear-gradient(145deg,#f03845,#d9162b 62%,#ba1024)}
 .nav-resume{background:linear-gradient(145deg,#252527,#09090a);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 5px 12px rgba(17,17,18,.15);transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s ease}
 .nav-resume:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 8px 16px rgba(17,17,18,.2)}
+
+/* ============================================================
+   Premium interaction layer
+   Additive only — no new colors, layout, type, or content.
+   Glassmorphism, glow, magnetic buttons, glossy sweeps, and
+   smoother, GPU-friendly motion on top of the existing system.
+   ============================================================ */
+
+.cursor-glow,.card,.skill-card,.project-card,.button,.nav-resume,.intro-enter,.brand-mark,.portrait-frame img{will-change:transform}
+
+/* Cursor glow is now driven by JS via translate3d (see script.js) instead of left/top,
+   which keeps it off the layout thread and lets it glide instead of jump. */
+.cursor-glow{left:0;top:0;transform:translate3d(-50%,-50%,0);filter:blur(1px)}
+
+/* Nav — animated underline + slightly richer glass edge */
+.nav-wrap{box-shadow:0 10px 28px rgba(78,46,46,.07),inset 0 -1px 0 rgba(255,255,255,.5)}
+.nav-links a{position:relative;padding-bottom:2px}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1.5px;background:var(--red);transition:right .35s cubic-bezier(.16,1,.3,1);box-shadow:0 0 8px rgba(230,35,50,.5)}
+.nav-links a:hover::after,.nav-links a.active::after{right:0}
+
+/* Buttons — magnetic pull, glossy light sweep, soft glow, press ripple */
+.button,.nav-resume,.intro-enter{position:relative;overflow:hidden;isolation:isolate}
+.button::before,.nav-resume::before,.intro-enter::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 48%,transparent 66%);transform:translateX(-120%);transition:transform .7s cubic-bezier(.16,1,.3,1);pointer-events:none}
+.button:hover::before,.nav-resume:hover::before,.intro-enter:hover::before{transform:translateX(120%)}
+.button:hover{transform:translate3d(var(--magnet-x,0px),calc(-4px + var(--magnet-y,0px)),0)}
+.button-dark:hover{box-shadow:8px 8px 0 var(--red),0 16px 32px rgba(17,17,18,.28)}
+.nav-resume:hover{transform:translate3d(var(--magnet-x,0px),calc(-2px + var(--magnet-y,0px)),0);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 12px 24px rgba(17,17,18,.3)}
+.intro-enter:hover{transform:translate3d(var(--magnet-x,0px),calc(-3px + var(--magnet-y,0px)),0);box-shadow:8px 8px 0 var(--red),0 0 26px rgba(230,35,50,.5)}
+.button:active,.nav-resume:active,.intro-enter:active{transform:translate3d(var(--magnet-x,0px),0,0) scale(.97)}
+.btn-ripple{position:absolute;z-index:0;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.65),rgba(255,255,255,0) 70%);transform:translate(-50%,-50%) scale(0);pointer-events:none;animation:btn-ripple .65s ease-out forwards}
+@keyframes btn-ripple{to{transform:translate(-50%,-50%) scale(15);opacity:0}}
+
+/* Cards — glossy top highlight + deeper, softer ambient shadow on hover */
+.skill-card{position:relative;overflow:hidden}
+.card::after,.skill-card::after,.project-card::after{content:"";position:absolute;inset:0;background:linear-gradient(165deg,rgba(255,255,255,.32),transparent 34%);opacity:0;transition:opacity .4s ease;pointer-events:none}
+.card:hover::after,.skill-card:hover::after,.project-card:hover::after{opacity:1}
+.card:hover{box-shadow:0 24px 48px rgba(35,21,21,.14),0 2px 0 rgba(255,255,255,.5) inset}
+.skill-card:hover,.project-card:hover{box-shadow:0 22px 44px rgba(17,17,18,.16)}
+
+/* Experience / project text-links get a soft underline wipe instead of a hard jump */
+.project-card a,.experience-link,.contact-email{position:relative}
+.contact-email::before{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--red);transition:width .4s cubic-bezier(.16,1,.3,1)}
+.contact-email:hover::before{width:100%}
+
+/* Intro — keyboard hint + a calm invitation pulse instead of static idling */
+.intro-hint{color:#e8b6ba;font:.6rem var(--mono);letter-spacing:.06em;opacity:.85}
+.intro-hint kbd{padding:.1rem .35rem;border:1px solid rgba(255,255,255,.35);border-radius:3px;font-family:inherit;color:#fff}
+.intro-enter{animation:intro-enter-pulse 2.6s ease-in-out infinite}
+@keyframes intro-enter-pulse{0%,100%{box-shadow:5px 5px 0 var(--red)}50%{box-shadow:7px 7px 0 var(--red),0 0 22px rgba(230,35,50,.45)}}
+
+/* Deliberate, visible focus rings — premium, not the browser default */
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+.hero-stage a:focus-visible,.hero-stage button:focus-visible{outline-color:#fff}
+
+/* Reveal: slightly richer easing with a touch of scale, still a one-way fade-up */
+.reveal{transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);transform:translateY(35px) scale(.985)}
+.reveal.visible{transform:none}
+
+/* Portrait ring / glow already animate — add a touch more depth on the frame */
+.portrait-frame{box-shadow:18px 18px 0 var(--ink),0 30px 60px rgba(17,17,18,.18)}
+
+@media(hover:none){
+  .button::before,.nav-resume::before,.intro-enter::before{display:none}
+  .card::after,.skill-card::after,.project-card::after{display:none}
+}
+
+@media(max-width:480px){.intro-hint{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  .intro-enter{animation:none}
+  .button::before,.nav-resume::before,.intro-enter::before{display:none}
+  .btn-ripple{display:none}
+  .reveal{transform:none}
+}

@@ -12,15 +12,30 @@ const finishIntro = () => {
 if (!reducedMotion) {
   document.body.classList.add("intro-active");
   enterButton.addEventListener("click", finishIntro);
+  // Let keyboard users continue instantly without reaching for the mouse.
+  window.requestAnimationFrame(() => enterButton.focus({ preventScroll: true }));
+  const handleIntroKey = (event) => {
+    if (event.key !== "Enter") return;
+    event.preventDefault();
+    finishIntro();
+    window.removeEventListener("keydown", handleIntroKey);
+  };
+  window.addEventListener("keydown", handleIntroKey);
 } else {
   introScreen.remove();
 }
 
+let scrollProgressTicking = false;
 const updateScrollProgress = () => {
   const available = document.documentElement.scrollHeight - window.innerHeight;
   document.documentElement.style.setProperty("--scroll", `${available ? (window.scrollY / available) * 100 : 0}%`);
+  scrollProgressTicking = false;
 };
-window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("scroll", () => {
+  if (scrollProgressTicking) return;
+  scrollProgressTicking = true;
+  window.requestAnimationFrame(updateScrollProgress);
+}, { passive: true });
 updateScrollProgress();
 
 // Reveal cards once, keeping their final layout stable.
@@ -62,21 +77,74 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  // Smoothed cursor glow: the target updates instantly, the rendered position eases
+  // toward it every frame, which reads as fluid rather than input-locked.
   const glow = document.querySelector(".cursor-glow");
+  const glowTarget = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  const glowCurrent = { ...glowTarget };
   window.addEventListener("pointermove", (event) => {
-    glow.style.left = `${event.clientX}px`;
-    glow.style.top = `${event.clientY}px`;
+    glowTarget.x = event.clientX;
+    glowTarget.y = event.clientY;
     glow.classList.add("active");
   }, { passive: true });
 
+  const renderGlow = () => {
+    glowCurrent.x += (glowTarget.x - glowCurrent.x) * 0.16;
+    glowCurrent.y += (glowTarget.y - glowCurrent.y) * 0.16;
+    glow.style.transform = `translate3d(${glowCurrent.x}px, ${glowCurrent.y}px, 0) translate(-50%, -50%)`;
+    requestAnimationFrame(renderGlow);
+  };
+  requestAnimationFrame(renderGlow);
+
+  // Card tilt: same easing approach so the surface glides to rest instead of snapping.
   document.querySelectorAll(".card, .skill-card, .project-card").forEach((card) => {
+    const state = { tx: 0, ty: 0, active: false, raf: null };
+    const settle = () => {
+      state.tx += (0 - state.tx) * 0.22;
+      state.ty += (0 - state.ty) * 0.22;
+      card.style.transform = `perspective(900px) rotateX(${state.ty}deg) rotateY(${state.tx}deg) translateY(${state.active ? -6 : 0}px)`;
+      if (!state.active && Math.abs(state.tx) < 0.02 && Math.abs(state.ty) < 0.02) {
+        card.style.transform = "";
+        state.raf = null;
+        return;
+      }
+      state.raf = requestAnimationFrame(settle);
+    };
+    const ensureLoop = () => { if (!state.raf) state.raf = requestAnimationFrame(settle); };
+
     card.addEventListener("pointermove", (event) => {
       const bounds = card.getBoundingClientRect();
-      const x = ((event.clientX - bounds.left) / bounds.width - .5) * 2;
-      const y = ((event.clientY - bounds.top) / bounds.height - .5) * -2;
-      card.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg) translateY(-6px)`;
+      state.tx = ((event.clientX - bounds.left) / bounds.width - .5) * 2;
+      state.ty = ((event.clientY - bounds.top) / bounds.height - .5) * -2;
+      state.active = true;
+      ensureLoop();
     });
-    card.addEventListener("pointerleave", () => { card.style.transform = ""; });
+    card.addEventListener("pointerleave", () => { state.active = false; ensureLoop(); });
+  });
+
+  // Magnetic buttons: a light pull toward the cursor within the button's own bounds.
+  document.querySelectorAll(".button, .nav-resume, .intro-enter").forEach((button) => {
+    button.addEventListener("pointermove", (event) => {
+      const bounds = button.getBoundingClientRect();
+      const x = (event.clientX - bounds.left - bounds.width / 2) * 0.18;
+      const y = (event.clientY - bounds.top - bounds.height / 2) * 0.28;
+      button.style.setProperty("--magnet-x", `${x}px`);
+      button.style.setProperty("--magnet-y", `${y}px`);
+    });
+    button.addEventListener("pointerleave", () => {
+      button.style.setProperty("--magnet-x", "0px");
+      button.style.setProperty("--magnet-y", "0px");
+    });
+    // A soft ripple on click reinforces that the press registered.
+    button.addEventListener("pointerdown", (event) => {
+      const bounds = button.getBoundingClientRect();
+      const ripple = document.createElement("i");
+      ripple.className = "btn-ripple";
+      ripple.style.left = `${event.clientX - bounds.left}px`;
+      ripple.style.top = `${event.clientY - bounds.top}px`;
+      button.appendChild(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove());
+    });
   });
 }
 
