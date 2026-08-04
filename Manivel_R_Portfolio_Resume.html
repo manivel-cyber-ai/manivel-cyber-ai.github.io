@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Manivel R — Resume</title>
     <style>
       @page { size: A4; margin: 12mm 15mm; }
@@ -26,10 +27,11 @@
         .contact { text-align: left; }
         .contact div { justify-content: flex-start; }
         header { flex-direction: column; align-items: flex-start; gap: 4px; }
+        .two-col { grid-template-columns: 1fr; gap: 14px; }
       }
       p { margin: 0; }
+      a { color: inherit; text-decoration: none; }
 
-      /* Header */
       header { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; border-bottom: 2.5px solid var(--ink); padding-bottom: 8px; margin-bottom: 14px; }
       .name-block h1 { margin: 0; font-size: 23pt; font-weight: 800; letter-spacing: -.5px; line-height: 1; }
       .name-block .headline { margin-top: 4px; color: var(--red); font-size: 9.6pt; font-weight: 700; letter-spacing: .01em; }
@@ -37,13 +39,11 @@
       .contact div { display: flex; justify-content: flex-end; gap: 5px; }
       .contact b { color: var(--ink); font-weight: 600; }
 
-      /* Sections */
       section { margin-top: 13px; }
       h2 { display: flex; align-items: center; gap: 7px; margin: 0 0 8px; color: var(--ink); font-size: 9.3pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
       h2::before { content: ""; width: 4px; height: 12px; background: var(--red); border-radius: 1px; flex: none; }
 
-      .summary { color: var(--grey); max-width: 96%; }
-
+      .summary { color: var(--grey); max-width: 98%; }
       .item + .item { margin-top: 8px; }
       .title-line { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
       .title-line .role { font-weight: 700; font-size: 9.7pt; }
@@ -58,103 +58,109 @@
       .stack { margin-top: 3px; display: flex; flex-wrap: wrap; gap: 4px; }
       .stack span { padding: 1.5px 6px; background: var(--tag-bg); color: var(--red-dark); border-radius: 3px; font-size: 7.4pt; font-weight: 600; letter-spacing: .02em; }
 
-      /* Skills */
       .skill-row { display: flex; gap: 8px; margin-top: 6px; }
       .skill-row:first-child { margin-top: 0; }
       .skill-label { flex: none; width: 92px; font-weight: 700; color: var(--ink); font-size: 8.6pt; padding-top: 2px; }
       .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; align-content: flex-start; }
       .skill-tags span { padding: 2px 7px; border: 1px solid var(--line); border-radius: 99px; font-size: 7.9pt; color: #3a3f3d; }
 
-      /* Two column lower band */
       .two-col { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: start; }
       .two-col .item { margin-top: 7px; }
       .two-col .item:first-child { margin-top: 0; }
       .meta { display: block; margin-top: 1px; color: var(--grey); font-size: 8.3pt; }
       .label { font-weight: 700; font-size: 8.9pt; }
+      .links { color: var(--grey); }
+      .links a { color: var(--ink); }
 
       .foot { margin-top: 14px; padding-top: 6px; border-top: 1px solid var(--line); color: var(--grey-light); font-size: 7.6pt; letter-spacing: .03em; }
     </style>
   </head>
   <body>
     <div class="sheet">
-    <header>
-      <div class="name-block">
-        <h1>MANIVEL R</h1>
-        <div class="headline">Cybersecurity Student · Ethical Hacking &amp; Web Security</div>
-      </div>
-      <div class="contact">
-        <div><b>Tiruchirappalli, Tamil Nadu</b></div>
-        <div>+91 7825039006 · mr.manivel.r@gmail.com</div>
-        <div>linkedin.com/in/mr-manivel-r · github.com/manivel-cyber-ai</div>
-      </div>
-    </header>
-
-    <section>
-      <h2>Profile</h2>
-      <p class="summary">Computer Science (AI &amp; ML) undergraduate with hands-on practice in web application security, network reconnaissance, and CTF problem-solving. Comfortable working in Linux environments with Burp Suite, Nmap, Wireshark, and Python. Interested in security operations, penetration testing, and AI-driven defensive security.</p>
-    </section>
-
-    <section>
-      <h2>Experience</h2>
-      <div class="item">
-        <div class="title-line">
-          <span class="role">Cybersecurity &amp; Ethical Hacking Intern <span class="org">· ApexPlanet Software Pvt. Ltd.</span></span>
-          <span class="date">Jun 2026 – Aug 2026</span>
+      <header>
+        <div class="name-block">
+          <h1>MANIVEL R</h1>
+          <div class="headline">Cybersecurity Student · Ethical Hacking · Application Security</div>
         </div>
-        <ul>
-          <li>Built a hands-on security lab with Kali Linux and vulnerable targets including Metasploitable2 and DVWA.</li>
-          <li>Performed network reconnaissance, vulnerability scanning with OpenVAS, and packet analysis with Wireshark.</li>
-          <li>Tested OWASP Top 10 vulnerabilities and documented mitigations including prepared statements and Content Security Policy.</li>
-          <li>Practised penetration-testing workflows, system-hardening procedures, malware-analysis fundamentals, and incident-response simulation.</li>
-        </ul>
-      </div>
-    </section>
+        <div class="contact">
+          <div><b>Tiruchirappalli, Tamil Nadu</b></div>
+          <div><a href="tel:+917825039006">+91 7825039006</a> · <a href="mailto:mr.manivel.r@gmail.com">mr.manivel.r@gmail.com</a></div>
+          <div><a href="https://linkedin.com/in/mr-manivel-r">linkedin.com/in/mr-manivel-r</a> · <a href="https://github.com/manivel-cyber-ai">github.com/manivel-cyber-ai</a></div>
+        </div>
+      </header>
 
-    <section>
-      <h2>Projects</h2>
-      <div class="item">
-        <div class="title-line"><span class="role">CyberRecon Agent</span><span class="date">2026</span></div>
-        <p class="project-detail">Built a reconnaissance and reporting workflow for the Kaggle Vibe Coding Capstone that automates an initial network scan and produces a structured Markdown security report.</p>
-        <div class="stack"><span>Python</span><span>Google ADK</span><span>Nmap</span><span>Gemini API</span><span>MCP</span></div>
-      </div>
-      <div class="item">
-        <div class="title-line"><span class="role">AdaptShield</span><span class="date">Ongoing</span></div>
-        <p class="project-detail">Developing an adversarial self-learning firewall featuring Red and Blue agents in a closed feedback loop for adaptive threat detection and response research.</p>
-        <div class="stack"><span>Python</span><span>AI/ML</span></div>
-      </div>
-      <div class="item">
-        <div class="title-line"><span class="role">SecureLearn Agent</span><span class="date">2026</span></div>
-        <p class="project-detail">Developed a multi-agent cybersecurity learning assistant with curriculum, CTF-hint, quiz, and personalization agents; delivered through an interactive CLI and MCP server.</p>
-        <div class="stack"><span>Python</span><span>Google ADK</span><span>Gemini API</span><span>MCP</span></div>
-      </div>
-    </section>
+      <section>
+        <h2>Profile</h2>
+        <p class="summary">Computer Science (AI &amp; ML) undergraduate with hands-on practice in web application security, network reconnaissance, and CTF problem-solving. Comfortable working in Linux environments with Burp Suite, Nmap, Wireshark, OpenVAS, and Python. Interested in application security, security operations, penetration testing, and AI-assisted defensive tooling.</p>
+      </section>
 
-    <section>
-      <h2>Technical Skills</h2>
-      <div class="skill-row"><span class="skill-label">Environment</span><div class="skill-tags"><span>Kali Linux</span><span>Linux CLI</span><span>Bash scripting</span></div></div>
-      <div class="skill-row"><span class="skill-label">Security tools</span><div class="skill-tags"><span>Nmap</span><span>Burp Suite</span><span>Wireshark</span><span>Netcat</span><span>Metasploit</span><span>OpenVAS</span></div></div>
-      <div class="skill-row"><span class="skill-label">Concepts</span><div class="skill-tags"><span>OWASP Top 10</span><span>Web security</span><span>OSINT</span><span>CTF methodology</span><span>Penetration testing</span></div></div>
-      <div class="skill-row"><span class="skill-label">Development</span><div class="skill-tags"><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span><span>GitHub</span></div></div>
-      <div class="skill-row"><span class="skill-label">Platforms</span><div class="skill-tags"><span>Hack The Box</span></div></div>
-    </section>
-
-    <section class="two-col">
-      <div>
-        <h2>Education</h2>
+      <section>
+        <h2>Experience</h2>
         <div class="item">
-          <div class="title-line"><span class="role">B.E. Computer Science Engineering (AI &amp; ML)</span><span class="date">Exp. 2028</span></div>
-          <span class="meta">University College of Engineering, BIT Campus, Anna University · Tiruchirappalli</span>
+          <div class="title-line">
+            <span class="role">Cybersecurity &amp; Ethical Hacking Intern <span class="org">· ApexPlanet Software Pvt. Ltd.</span></span>
+            <span class="date">Jun 2026 – Aug 2026</span>
+          </div>
+          <ul>
+            <li>Built a hands-on security lab with Kali Linux and vulnerable targets including Metasploitable2 and DVWA.</li>
+            <li>Performed network reconnaissance, vulnerability scanning with OpenVAS, and packet analysis with Wireshark.</li>
+            <li>Tested OWASP Top 10 vulnerabilities and documented mitigations including prepared statements and Content Security Policy.</li>
+            <li>Practised penetration-testing workflows, system-hardening procedures, malware-analysis fundamentals, and incident-response simulation.</li>
+          </ul>
         </div>
-      </div>
-      <div>
-        <h2>Achievements &amp; Activities</h2>
-        <div class="item"><span class="label">DCG CBE CTF 2026</span><span class="meta">Ranked 90th of 500+ teams (top 18%) at Kumaraguru College of Technology, Coimbatore.</span></div>
-        <div class="item"><span class="label">Certification</span><span class="meta">Cisco Networking Academy — Linux Unhatched</span></div>
-        <div class="item"><span class="label">Languages</span><span class="meta">English, Tamil</span></div>
-      </div>
-    </section>
+      </section>
 
-    <div class="foot">Portfolio: manivel-cyber-ai.github.io · Source: github.com/manivel-cyber-ai</div>
+      <section>
+        <h2>Projects</h2>
+        <div class="item">
+          <div class="title-line"><span class="role">CyberRecon Agent</span><span class="date">2026</span></div>
+          <p class="project-detail">Built a reconnaissance and reporting workflow that automates initial scan collection and converts output into structured Markdown reports for faster review.</p>
+          <div class="stack"><span>Python</span><span>Google ADK</span><span>Nmap</span><span>Gemini API</span><span>MCP</span></div>
+        </div>
+        <div class="item">
+          <div class="title-line"><span class="role">AdaptShield</span><span class="date">Ongoing</span></div>
+          <p class="project-detail">Developing an adversarial self-learning firewall concept with Red and Blue agents in a feedback loop for adaptive threat-detection research.</p>
+          <div class="stack"><span>Python</span><span>AI/ML</span><span>Defensive Security</span></div>
+        </div>
+        <div class="item">
+          <div class="title-line"><span class="role">SecureLearn Agent</span><span class="date">2026</span></div>
+          <p class="project-detail">Developed a multi-agent cybersecurity learning assistant with curriculum, CTF-hint, quiz, and personalization flows delivered through an interactive CLI and MCP server.</p>
+          <div class="stack"><span>Python</span><span>Google ADK</span><span>Gemini API</span><span>MCP</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technical Skills</h2>
+        <div class="skill-row"><span class="skill-label">Environment</span><div class="skill-tags"><span>Kali Linux</span><span>Linux CLI</span><span>Bash scripting</span></div></div>
+        <div class="skill-row"><span class="skill-label">Security tools</span><div class="skill-tags"><span>Nmap</span><span>Burp Suite</span><span>Wireshark</span><span>Netcat</span><span>Metasploit</span><span>OpenVAS</span></div></div>
+        <div class="skill-row"><span class="skill-label">Concepts</span><div class="skill-tags"><span>OWASP Top 10</span><span>Web security</span><span>OSINT</span><span>CTF methodology</span><span>Penetration testing</span></div></div>
+        <div class="skill-row"><span class="skill-label">Development</span><div class="skill-tags"><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span><span>GitHub</span></div></div>
+        <div class="skill-row"><span class="skill-label">Platforms</span><div class="skill-tags"><span>Hack The Box</span></div></div>
+      </section>
+
+      <section class="two-col">
+        <div>
+          <h2>Education</h2>
+          <div class="item">
+            <div class="title-line"><span class="role">B.E. Computer Science Engineering (AI &amp; ML)</span><span class="date">Exp. 2028</span></div>
+            <span class="meta">University College of Engineering, BIT Campus, Anna University · Tiruchirappalli</span>
+          </div>
+
+          <h2 style="margin-top:12px;">Links</h2>
+          <div class="item links">
+            <span class="meta">Portfolio · <a href="https://manivel-cyber-ai.github.io/">manivel-cyber-ai.github.io</a></span>
+            <span class="meta">GitHub · <a href="https://github.com/manivel-cyber-ai">github.com/manivel-cyber-ai</a></span>
+          </div>
+        </div>
+        <div>
+          <h2>Achievements &amp; Learning</h2>
+          <div class="item"><span class="label">DCG CBE CTF 2026</span><span class="meta">Ranked 90th of 500+ teams (top 18%) at Kumaraguru College of Technology, Coimbatore.</span></div>
+          <div class="item"><span class="label">Certifications</span><span class="meta">Cisco Networking Academy — Ethical Hacker, Introduction to Cybersecurity, Linux Unhatched.</span></div>
+          <div class="item"><span class="label">Languages</span><span class="meta">English, Tamil</span></div>
+        </div>
+      </section>
+
+      <div class="foot">Portfolio: manivel-cyber-ai.github.io · GitHub: github.com/manivel-cyber-ai</div>
     </div>
   </body>
 </html>

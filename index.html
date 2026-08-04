@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Manivel R — cybersecurity, ethical hacking, and AI/ML portfolio." />
-    <meta name="keywords" content="Manivel R, cybersecurity, ethical hacking, AI, CTF, portfolio" />
+    <meta name="description" content="Manivel R — cybersecurity, ethical hacking, web security, and AI-assisted defense portfolio." />
+    <meta name="keywords" content="Manivel R, cybersecurity, ethical hacking, application security, AI, CTF, portfolio" />
     <meta name="author" content="Manivel R" />
     <meta property="og:title" content="Manivel R | Cybersecurity Portfolio" />
-    <meta property="og:description" content="Cybersecurity-focused AI & ML undergraduate portfolio." />
+    <meta property="og:description" content="Cybersecurity-focused AI & ML undergraduate portfolio with projects, internship work, and security learning in public." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="profile_pic.jpeg" />
     <meta name="theme-color" content="#e7212d" />
@@ -16,8 +16,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Manivel R",
+        "jobTitle": "Cybersecurity Student",
+        "description": "Computer Science (AI & ML) undergraduate focused on ethical hacking, web security, CTFs, and AI-assisted defensive security.",
+        "email": "mailto:mr.manivel.r@gmail.com",
+        "url": "https://manivel-cyber-ai.github.io/",
+        "image": "https://manivel-cyber-ai.github.io/profile_pic.jpeg",
+        "sameAs": [
+          "https://github.com/manivel-cyber-ai",
+          "https://linkedin.com/in/mr-manivel-r"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tiruchirappalli",
+          "addressRegion": "Tamil Nadu",
+          "addressCountry": "IN"
+        }
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <svg class="icon-sprite" aria-hidden="true">
       <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.8c0 4.6 3.1 7.7 7.5 9.2 4.4-1.5 7.5-4.6 7.5-9.2V6L12 3Z"/><path d="m8.7 12 2.1 2.1 4.6-4.7"/></symbol>
       <symbol id="terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
@@ -33,14 +57,20 @@
       <symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
       <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
     </svg>
+
     <div class="scroll-progress" aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="noise" aria-hidden="true"></div>
     <div class="background" aria-hidden="true"><canvas class="network-canvas"></canvas><i class="orb orb-one"></i><i class="orb orb-two"></i><i class="orb orb-three"></i></div>
+
     <section class="intro-screen" aria-label="Portfolio introduction">
       <div class="intro-grid" aria-hidden="true"></div>
-      <p class="intro-code">// ACCESS GRANTED · 2026</p>
-      <div class="intro-copy"><p>HELLO, I’M</p><h1>Manivel <em>R.</em></h1><span>CYBERSECURITY · AI/ML · ETHICAL HACKING</span></div>
+      <p class="intro-code">// PORTFOLIO ACCESS · SECURITY · AI · SYSTEMS</p>
+      <div class="intro-copy">
+        <p>HELLO, I’M</p>
+        <h1>Manivel <em>R.</em></h1>
+        <span>CYBERSECURITY · ETHICAL HACKING · AI/ML</span>
+      </div>
       <div class="intro-portrait" aria-hidden="true"><img src="profile_pic.jpeg" alt="" /><i></i><b>MR</b></div>
       <div class="intro-actions"><button class="intro-enter" type="button">Enter <svg><use href="#arrow" /></svg></button><span class="intro-hint">or press <kbd>Enter</kbd> ↵</span></div>
     </section>
@@ -49,7 +79,11 @@
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="#top" aria-label="Go to homepage"><span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect width="40" height="40" rx="10" fill="#111112"/><path d="M9 11.5 20 7l11 4.5v7.8c0 6.5-4.4 11.1-11 13.7-6.6-2.6-11-7.2-11-13.7v-7.8Z" fill="#e62332"/><path d="m13.8 20.2 3.7 3.7 8.4-8.7" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><circle cx="30" cy="10" r="2" fill="#fff"/></svg></span> Manivel R</a>
         <div class="nav-links">
-          <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
         <div class="nav-actions">
           <a class="nav-resume" href="Manivel_R_Portfolio_Resume.html" target="_blank" rel="noreferrer">Resume <svg><use href="#arrow" /></svg></a>
@@ -59,7 +93,11 @@
         </div>
       </nav>
       <div class="mobile-menu" id="mobile-menu">
-        <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
         <a class="mobile-resume" href="Manivel_R_Portfolio_Resume.html" target="_blank" rel="noreferrer">Resume <svg><use href="#arrow" /></svg></a>
       </div>
     </header>
@@ -67,54 +105,209 @@
 
     <main id="top">
       <section class="hero-stage">
-      <div class="hero-spotlight" aria-hidden="true"></div>
-      <div class="hero page-width">
-        <div class="hero-copy">
-          <p class="eyebrow"><span></span> Cybersecurity portfolio · 2026</p>
-          <h1>Security is<br /><em>built</em> with intent<span class="blink">_</span></h1>
-          <p class="hero-intro">Hi, I’m <strong>Manivel R</strong> — an AI &amp; ML undergraduate exploring ethical hacking, web security, and AI-driven defense.</p>
-          <div class="hero-actions"><a class="button button-dark" href="#projects">See my work <svg><use href="#arrow" /></svg></a><a class="button button-light" href="mailto:mr.manivel.r@gmail.com">Let’s connect</a></div>
-          <div class="social-row"><a href="https://github.com/manivel-cyber-ai" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg> GitHub</a><a href="https://linkedin.com/in/mr-manivel-r" target="_blank" rel="noreferrer"><svg><use href="#linkedin" /></svg> LinkedIn</a><span>TRICHY, INDIA</span></div>
+        <div class="hero-spotlight" aria-hidden="true"></div>
+        <div class="hero page-width" id="main-content">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> Cybersecurity portfolio · student builder · open to internships</p>
+            <h1>I build practical <em>security</em><br />projects for modern systems<span class="blink">_</span></h1>
+            <p class="hero-intro">Hi, I’m <strong>Manivel R</strong> — a Computer Science (AI &amp; ML) undergraduate from Tiruchirappalli focused on ethical hacking, application security, reconnaissance workflows, and AI-assisted defense.</p>
+            <div class="hero-actions">
+              <a class="button button-dark" href="#projects">See my work <svg><use href="#arrow" /></svg></a>
+              <a class="button button-light" href="Manivel_R_Portfolio_Resume.html" target="_blank" rel="noreferrer">View resume</a>
+              <a class="button button-light" href="mailto:mr.manivel.r@gmail.com">Email me</a>
+            </div>
+            <div class="social-row">
+              <a href="https://github.com/manivel-cyber-ai" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg> GitHub</a>
+              <a href="https://linkedin.com/in/mr-manivel-r" target="_blank" rel="noreferrer"><svg><use href="#linkedin" /></svg> LinkedIn</a>
+              <span>TRICHY, INDIA</span>
+            </div>
+            <ul class="hero-proof reveal" aria-label="Key highlights">
+              <li><strong>Top 18%</strong><span>DCG CBE CTF 2026</span></li>
+              <li><strong>3 security projects</strong><span>Built in public on GitHub</span></li>
+              <li><strong>Internship ready</strong><span>Hands-on with labs, scans, and reporting</span></li>
+            </ul>
+          </div>
+          <div class="hero-visual" aria-label="Portrait of Manivel R">
+            <div class="hero-stamp">OPEN TO<br />INTERNSHIPS</div>
+            <div class="portrait-frame"><img src="profile_pic.jpeg" alt="Portrait of Manivel R" width="360" height="430" fetchpriority="high" /><span class="portrait-scan"></span><span class="portrait-flash"></span><span class="portrait-ring" aria-hidden="true"></span></div>
+            <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+            <span class="portrait-label label-top">MANIVEL.R / APPSEC</span><span class="portrait-label label-side">ETHICAL HACKER</span>
+            <p class="visual-tag">01 — DEFEND<br />02 — DETECT<br />03 — LEARN</p>
+          </div>
         </div>
-        <div class="hero-visual" aria-label="Portrait of Manivel R">
-          <div class="hero-stamp">OPEN TO<br />INTERNSHIPS</div>
-          <div class="portrait-frame"><img src="profile_pic.jpeg" alt="Portrait of Manivel R" width="360" height="430" fetchpriority="high" /><span class="portrait-scan"></span><span class="portrait-flash"></span><span class="portrait-ring" aria-hidden="true"></span></div>
-          <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
-          <span class="portrait-label label-top">MANIVEL.R / SEC</span><span class="portrait-label label-side">ETHICAL HACKER</span>
-          <p class="visual-tag">01 — DEFEND<br />02 — DETECT<br />03 — LEARN</p>
-        </div>
-      </div>
       </section>
 
       <section class="bento page-width" id="about">
-        <article class="card intro-card reveal"><p class="card-kicker">01 / ABOUT ME</p><div class="icon-box"><svg><use href="#shield" /></svg></div><h2>A curious mind for a connected world.</h2><p>Focused on web application security and ethical hacking, with hands-on practice in Linux, CTFs, and security research.</p><div class="marquee"><span>THINK · TEST · HARDEN · REPEAT · THINK · TEST · HARDEN · REPEAT ·</span></div></article>
-        <article class="card education-card reveal"><p class="card-kicker">EDUCATION</p><h3>B.E. Computer Science Engineering <em>(AI &amp; ML)</em></h3><p>University College of Engineering, BIT Campus, Anna University</p><strong>Expected 2028</strong><div class="corner-mark">EDU<br />// 01</div></article>
-        <article class="card stat-card red reveal"><span>CTF RANK</span><strong>TOP<br /><span class="counter" data-target="18">0</span>%</strong><p>90th of 500+ teams<br />DCG CBE CTF 2026</p><svg class="giant-icon"><use href="#trophy" /></svg></article>
-        <article class="card quote-card reveal"><svg><use href="#terminal" /></svg><p>“Learn the system. Question the surface. Secure what matters.”</p><span>— MANIVEL R</span></article>
+        <article class="card intro-card reveal">
+          <p class="card-kicker">01 / ABOUT ME</p>
+          <div class="icon-box"><svg><use href="#shield" /></svg></div>
+          <h2>A curious builder with a security-first mindset.</h2>
+          <p>I like understanding how systems fail, how attackers think, and how cleaner engineering decisions can reduce risk. My work so far blends hands-on security tooling, web vulnerability practice, and Python-based automation.</p>
+          <div class="marquee"><span>THINK · TEST · HARDEN · AUTOMATE · LEARN · REPEAT · THINK · TEST · HARDEN ·</span></div>
+        </article>
+        <article class="card education-card reveal">
+          <p class="card-kicker">EDUCATION</p>
+          <h3>B.E. Computer Science Engineering <em>(AI &amp; ML)</em></h3>
+          <p>University College of Engineering, BIT Campus, Anna University</p>
+          <strong>Expected 2028</strong>
+          <div class="corner-mark">EDU<br />// 01</div>
+        </article>
+        <article class="card stat-card red reveal"><span>CTF RESULT</span><strong>TOP<br /><span class="counter" data-target="18">0</span>%</strong><p>Ranked 90th of 500+ teams<br />DCG CBE CTF 2026</p><svg class="giant-icon"><use href="#trophy" /></svg></article>
+        <article class="card quote-card reveal"><svg><use href="#terminal" /></svg><p>“Learn the system. Question assumptions. Build defenses that hold up under pressure.”</p><span>— MANIVEL R</span></article>
       </section>
 
       <section class="section-heading page-width" id="skills"><p>02 / CAPABILITIES</p><h2>Tools of the trade<span>.</span></h2></section>
       <section class="skill-grid page-width">
         <article class="skill-card reveal"><div class="skill-icon"><svg><use href="#terminal" /></svg></div><h3>Environment</h3><p>Kali Linux · Linux CLI · Bash scripting</p></article>
-        <article class="skill-card reveal"><div class="skill-icon"><svg><use href="#radar" /></svg></div><h3>Security</h3><p>Nmap · Burp Suite · Wireshark · Netcat · Metasploit · OpenVAS</p></article>
-        <article class="skill-card reveal"><div class="skill-icon"><svg><use href="#shield" /></svg></div><h3>Methodology</h3><p>OWASP Top 10 · Web security · OSINT · Penetration testing · CTFs</p></article>
-        <article class="skill-card reveal"><div class="skill-icon"><svg><use href="#terminal" /></svg></div><h3>Build &amp; Practice</h3><p>Python · HTML · CSS · JavaScript · Git · GitHub · Hack The Box</p></article>
+        <article class="skill-card reveal"><div class="skill-icon"><svg><use href="#radar" /></svg></div><h3>Security tooling</h3><p>Nmap · Burp Suite · Wireshark · Netcat · Metasploit · OpenVAS</p></article>
+        <article class="skill-card reveal"><div class="skill-icon"><svg><use href="#shield" /></svg></div><h3>Security concepts</h3><p>OWASP Top 10 · Web security · OSINT · Penetration testing · CTF workflows</p></article>
+        <article class="skill-card reveal"><div class="skill-icon"><svg><use href="#terminal" /></svg></div><h3>Engineering stack</h3><p>Python · HTML · CSS · JavaScript · Git · GitHub · Hack The Box</p></article>
+      </section>
+
+      <section class="section-heading page-width"><p>03 / FOCUS AREAS</p><h2>What I’m building depth in<span>.</span></h2></section>
+      <section class="focus-grid page-width">
+        <article class="focus-card reveal">
+          <div class="focus-icon"><svg><use href="#shield" /></svg></div>
+          <h3>Application security</h3>
+          <p>Practising common web attack paths, validating OWASP risks, and understanding the fixes that reduce repeat vulnerabilities.</p>
+        </article>
+        <article class="focus-card reveal">
+          <div class="focus-icon"><svg><use href="#radar" /></svg></div>
+          <h3>Recon automation</h3>
+          <p>Turning repetitive scanning and reporting tasks into cleaner Python workflows that are easier to run, review, and share.</p>
+        </article>
+        <article class="focus-card reveal">
+          <div class="focus-icon"><svg><use href="#terminal" /></svg></div>
+          <h3>AI for defense</h3>
+          <p>Exploring how agents, structured outputs, and feedback loops can support detection, learning, and defensive decision-making.</p>
+        </article>
       </section>
 
       <section class="bento bento-lower page-width">
-        <article class="card experience-card reveal" id="experience"><p class="card-kicker">03 / EXPERIENCE</p><div class="title-row"><h2>On the field.</h2><svg><use href="#briefcase" /></svg></div><h3>Cybersecurity &amp; Ethical Hacking Intern</h3><p class="meta">ApexPlanet Software Pvt. Ltd. · Jun 2026 – Aug 2026</p><ul><li>Built a professional hacking lab with Kali Linux, Metasploitable2, and DVWA.</li><li>Performed reconnaissance, OpenVAS vulnerability scanning, and Wireshark packet analysis.</li><li>Tested OWASP Top 10 risks and applied mitigations including prepared statements and CSP.</li><li>Practised penetration testing, system hardening, malware-analysis basics, and incident response.</li></ul><a class="experience-link" href="https://github.com/manivel-cyber-ai/apexplanet-cybersecurity-internship" target="_blank" rel="noreferrer">View internship lab notes <svg><use href="#arrow" /></svg></a></article>
-        <article class="card community-card reveal"><p class="card-kicker">COMMUNITY</p><svg><use href="#trophy" /></svg><h3>DCG Coimbatore Chapter Meetup 2026</h3><p>Connected with cybersecurity practitioners and attended community-led security sessions.</p><div class="cert-lines"><span>CISCO NETWORKING ACADEMY</span><b>Ethical Hacker</b><b>Introduction to Cybersecurity</b></div></article>
+        <article class="card experience-card reveal" id="experience">
+          <p class="card-kicker">04 / EXPERIENCE</p>
+          <div class="title-row"><h2>On the field.</h2><svg><use href="#briefcase" /></svg></div>
+          <h3>Cybersecurity &amp; Ethical Hacking Intern</h3>
+          <p class="meta">ApexPlanet Software Pvt. Ltd. · Jun 2026 – Aug 2026</p>
+          <ul>
+            <li>Built a professional practice lab using Kali Linux, Metasploitable2, and DVWA.</li>
+            <li>Performed reconnaissance, OpenVAS vulnerability scanning, and packet analysis with Wireshark.</li>
+            <li>Tested OWASP Top 10 issues and documented mitigations such as prepared statements and Content Security Policy.</li>
+            <li>Practised penetration-testing workflows, system hardening, malware-analysis basics, and incident-response simulation.</li>
+          </ul>
+          <a class="experience-link" href="https://github.com/manivel-cyber-ai/apexplanet-cybersecurity-internship" target="_blank" rel="noreferrer">View internship lab notes <svg><use href="#arrow" /></svg></a>
+        </article>
+        <article class="card community-card reveal">
+          <p class="card-kicker">COMMUNITY &amp; LEARNING</p>
+          <svg><use href="#trophy" /></svg>
+          <h3>Learning in public, one security challenge at a time.</h3>
+          <p>From CTF participation to lab notes and GitHub projects, I’m documenting practical progress rather than just listing tools.</p>
+          <div class="cert-lines"><span>DCG COIMBATORE CHAPTER</span><b>CTF top 18%</b><b>Cisco Networking Academy learner</b></div>
+        </article>
       </section>
 
-      <section class="section-heading page-width" id="projects"><p>04 / SELECTED WORK</p><h2>Ideas under pressure<span>.</span></h2></section>
+      <section class="section-heading page-width" id="projects"><p>05 / SELECTED WORK</p><h2>Projects with direction<span>.</span></h2></section>
       <section class="projects page-width">
-        <article class="project-card project-red reveal"><div><div class="kicker-row"><p class="card-kicker">ACTIVE DEVELOPMENT</p><span class="status-pill"><i></i>Work in progress</span></div><h3>AdaptShield</h3><p>Adversarial self-learning firewall: Red and Blue AI agents learning in a closed loop for adaptive defense.</p><a class="repo-link" href="https://github.com/manivel-cyber-ai/AdaptShield" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View repo — code in progress</a></div><div class="project-art shield-art"><svg><use href="#shield" /></svg><i></i><i></i></div><span class="project-stack"><span class="tech-chip">PYTHON</span><span class="tech-chip">AI/ML</span></span></article>
-        <article class="project-card project-light reveal"><div><p class="card-kicker">CAPSTONE</p><h3>CyberRecon Agent</h3><p>Security recon and reporting workflow that automates an initial network scan and produces clear Markdown reports.</p><a class="repo-link" href="https://github.com/manivel-cyber-ai/cyberrecon-agent" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View project</a></div><div class="project-art radar-art"><svg><use href="#radar" /></svg></div><span class="project-stack"><span class="tech-chip">PYTHON</span><span class="tech-chip">NMAP</span><span class="tech-chip">MCP</span></span></article>
-        <article class="project-card project-dark reveal"><div><p class="card-kicker">LEARNING SYSTEM</p><h3>SecureLearn Agent</h3><p>Multi-agent cybersecurity education assistant for structured learning, CTF guidance, quizzes, and progress tracking.</p><a class="repo-link" href="https://github.com/manivel-cyber-ai/SecureLearnAgent" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View project</a></div><div class="code-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><span class="project-stack"><span class="tech-chip">GOOGLE ADK</span><span class="tech-chip">GEMINI</span><span class="tech-chip">MCP</span></span></article>
+        <article class="project-card project-red reveal">
+          <div>
+            <div class="kicker-row"><p class="card-kicker">ACTIVE DEVELOPMENT</p><span class="status-pill"><i></i>Work in progress</span></div>
+            <h3>AdaptShield</h3>
+            <p>Adversarial self-learning firewall: Red and Blue AI agents learning in a closed loop for adaptive defense research.</p>
+            <ul class="project-points">
+              <li>Explores attacker-versus-defender learning loops</li>
+              <li>Focuses on adaptive policy and response behavior</li>
+              <li>Built to connect AI experimentation with security use cases</li>
+            </ul>
+            <a class="repo-link" href="https://github.com/manivel-cyber-ai/AdaptShield" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View repo — code in progress</a>
+          </div>
+          <div class="project-art shield-art"><svg><use href="#shield" /></svg><i></i><i></i></div>
+          <span class="project-stack"><span class="tech-chip">PYTHON</span><span class="tech-chip">AI/ML</span><span class="tech-chip">DEFENSE</span></span>
+        </article>
+
+        <article class="project-card project-light reveal">
+          <div>
+            <p class="card-kicker">CAPSTONE</p>
+            <h3>CyberRecon Agent</h3>
+            <p>Security recon and reporting workflow that automates an initial network scan and turns output into clear Markdown reporting.</p>
+            <ul class="project-points">
+              <li>Automates repetitive reconnaissance steps</li>
+              <li>Organizes results into readable reports</li>
+              <li>Designed for faster first-pass visibility</li>
+            </ul>
+            <a class="repo-link" href="https://github.com/manivel-cyber-ai/cyberrecon-agent" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View project</a>
+          </div>
+          <div class="project-art radar-art"><svg><use href="#radar" /></svg></div>
+          <span class="project-stack"><span class="tech-chip">PYTHON</span><span class="tech-chip">NMAP</span><span class="tech-chip">MCP</span></span>
+        </article>
+
+        <article class="project-card project-dark reveal">
+          <div>
+            <p class="card-kicker">LEARNING SYSTEM</p>
+            <h3>SecureLearn Agent</h3>
+            <p>Multi-agent cybersecurity education assistant for structured learning, CTF guidance, quizzes, and progress tracking.</p>
+            <ul class="project-points">
+              <li>Breaks down concepts into guided learning paths</li>
+              <li>Supports quiz and hint-based practice</li>
+              <li>Shows how agent systems can teach technical content</li>
+            </ul>
+            <a class="repo-link" href="https://github.com/manivel-cyber-ai/SecureLearnAgent" target="_blank" rel="noreferrer"><svg><use href="#github" /></svg>View project</a>
+          </div>
+          <div class="code-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="project-stack"><span class="tech-chip">GOOGLE ADK</span><span class="tech-chip">GEMINI</span><span class="tech-chip">MCP</span></span>
+        </article>
       </section>
 
-      <footer class="footer page-width" id="contact"><div><p class="card-kicker">05 / GET IN TOUCH</p><h2>Let’s build<br /><em>safer</em> things.</h2></div><div class="contact-row"><a class="contact-email" href="mailto:mr.manivel.r@gmail.com"><svg><use href="#mail" /></svg><span>mr.manivel.r@gmail.com</span><svg><use href="#arrow" /></svg></a><button class="copy-email-btn" type="button" data-email="mr.manivel.r@gmail.com" aria-label="Copy email address"><svg class="icon-copy"><use href="#copy" /></svg><svg class="icon-check"><use href="#check" /></svg></button></div><p class="footer-note">© 2026 MANIVEL R · DESIGNED WITH INTENT · <a href="https://github.com/manivel-cyber-ai/manivel-cyber-ai.github.io" target="_blank" rel="noreferrer">SOURCE ON GITHUB</a></p></footer>
+      <section class="section-heading page-width"><p>06 / CERTIFICATIONS</p><h2>Signals of consistency<span>.</span></h2></section>
+      <section class="cert-grid page-width">
+        <article class="cert-card reveal">
+          <p class="card-kicker">CISCO NETWORKING ACADEMY</p>
+          <h3>Ethical Hacker</h3>
+          <p>Structured exposure to attacker mindset, practical security fundamentals, and ethical testing concepts.</p>
+        </article>
+        <article class="cert-card reveal">
+          <p class="card-kicker">CISCO NETWORKING ACADEMY</p>
+          <h3>Introduction to Cybersecurity</h3>
+          <p>Foundational learning across security concepts, online safety, and cyber risk awareness.</p>
+        </article>
+        <article class="cert-card reveal">
+          <p class="card-kicker">CISCO NETWORKING ACADEMY</p>
+          <h3>Linux Unhatched</h3>
+          <p>Command-line fundamentals, Linux workflows, and environment familiarity for hands-on lab work.</p>
+        </article>
+      </section>
+
+      <section class="cta-band page-width reveal" aria-labelledby="cta-title">
+        <div>
+          <p class="card-kicker">07 / NEXT STEP</p>
+          <h2 id="cta-title">Looking for an intern who can learn fast and build in public?</h2>
+          <p>I’m actively growing in cybersecurity and would love to contribute to internship, trainee, or early-career opportunities in application security, defensive security, or security automation.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="button button-dark" href="mailto:mr.manivel.r@gmail.com">Start a conversation <svg><use href="#arrow" /></svg></a>
+          <a class="button button-light" href="https://github.com/manivel-cyber-ai" target="_blank" rel="noreferrer">Browse GitHub</a>
+        </div>
+      </section>
+
+      <footer class="footer page-width" id="contact">
+        <div>
+          <p class="card-kicker">08 / GET IN TOUCH</p>
+          <h2>Let’s build<br /><em>safer</em> things.</h2>
+        </div>
+        <div>
+          <div class="contact-row">
+            <a class="contact-email" href="mailto:mr.manivel.r@gmail.com"><svg><use href="#mail" /></svg><span>mr.manivel.r@gmail.com</span><svg><use href="#arrow" /></svg></a>
+            <button class="copy-email-btn" type="button" data-email="mr.manivel.r@gmail.com" aria-label="Copy email address"><svg class="icon-copy"><use href="#copy" /></svg><svg class="icon-check"><use href="#check" /></svg></button>
+          </div>
+          <div class="footer-meta reveal">
+            <p><strong>Location:</strong> Tiruchirappalli, Tamil Nadu, India</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/manivel-cyber-ai" target="_blank" rel="noreferrer">manivel-cyber-ai</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mr-manivel-r" target="_blank" rel="noreferrer">mr-manivel-r</a></p>
+          </div>
+        </div>
+        <p class="footer-note">© <span data-year></span> MANIVEL R · DESIGNED WITH INTENT · <a href="https://github.com/manivel-cyber-ai/manivel-cyber-ai.github.io" target="_blank" rel="noreferrer">SOURCE ON GITHUB</a></p>
+      </footer>
     </main>
+
     <div class="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>

@@ -279,7 +279,7 @@ if (counters.length) {
 }
 
 // Copy email to clipboard with a toast confirmation, alongside the existing mailto link.
-const copyButton = document.querySelector(".copy-email-btn");
+const copyButtons = document.querySelectorAll(".copy-email-btn");
 const toast = document.querySelector(".toast");
 let toastTimer;
 const showToast = (message) => {
@@ -289,7 +289,7 @@ const showToast = (message) => {
   window.clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => toast.classList.remove("show"), 2400);
 };
-if (copyButton) {
+copyButtons.forEach((copyButton) => {
   copyButton.addEventListener("click", async () => {
     const email = copyButton.dataset.email;
     try {
@@ -306,4 +306,8 @@ if (copyButton) {
       copyButton.setAttribute("aria-label", "Copy email address");
     }, 2200);
   });
-}
+});
+
+document.querySelectorAll("[data-year]").forEach((node) => {
+  node.textContent = new Date().getFullYear();
+});

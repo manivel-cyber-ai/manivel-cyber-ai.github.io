@@ -1,30 +1,28 @@
 # Manivel R — Cybersecurity Portfolio
 
-A cinematic, responsive portfolio for Manivel R, a Computer Science (AI & ML) undergraduate focused on ethical hacking, web security, CTFs, and AI-driven defense.
+A cinematic, recruiter-friendly portfolio for Manivel R, a Computer Science (AI & ML) undergraduate focused on ethical hacking, web security, CTFs, and AI-assisted defensive security.
 
 **Live site:** [manivel-cyber-ai.github.io](https://manivel-cyber-ai.github.io/)
 
-## Highlights
+## What improved
 
-- Crimson red bento-card design system with custom SVG iconography
-- Animated opening sequence introducing Manivel R, with an optional browser-generated sound and spoken welcome
-- Interactive profile portrait with scan lines, moving highlight, labels, orbit elements, and an internship status stamp
-- Motion-rich but accessible interactions: scroll reveals, animated project artwork, cursor glow, 3D card tilt, progress indicator, and a security-network canvas
-- Responsive layouts for desktop, tablet, and mobile
-- `prefers-reduced-motion` support disables non-essential animation and skips the opening screen
-- Portfolio content covering skills, CTF achievement, internship work, certifications, projects, and contact links
+- Sharper hero section with internship-ready positioning and trust signals
+- New focus-area section for application security, recon automation, and AI for defense
+- Stronger project storytelling with recruiter-friendly bullet points
+- Certifications section added to surface learning progress clearly
+- Better accessibility with skip link and more complete navigation
+- Dynamic footer year and reusable copy-email handling in JavaScript
+- Resume page refreshed to align with the portfolio narrative
 
 ## Technology
 
 - HTML5
 - CSS3 — custom properties, Grid, Flexbox, keyframe animation, responsive media queries
-- Vanilla JavaScript — Web Audio API, Speech Synthesis API, `IntersectionObserver`, Canvas API
+- Vanilla JavaScript — `IntersectionObserver`, Canvas API, clipboard actions, motion-aware interactions
 
 No frameworks, build step, or third-party icon library is required.
 
 ## Run locally
-
-Open `index.html` directly in a modern browser, or serve this directory locally:
 
 ```bash
 python3 -m http.server 8000
@@ -32,31 +30,17 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-## Sound and accessibility
-
-Browsers do not allow websites to autoplay audio. The opening screen therefore offers **Enter with sound** and **Enter silently**. The sound option plays a generated intro track plus a browser voice introduction; no audio recording is stored in this repository.
-
-Users with a reduced-motion preference bypass the opening sequence and all decorative motion is minimized.
-
 ## Project structure
 
 ```text
 .
-├── index.html                         # Main portfolio
-├── styles.css                         # Visual system, layout, and animations
-├── script.js                          # Opening sequence, sound, interaction, and canvas effects
-├── profile_pic.jpeg                   # Profile image
-├── Manivel_R_Portfolio_Resume.html    # Print-ready resume page
+├── index.html
+├── styles.css
+├── script.js
+├── profile_pic.jpeg
+├── Manivel_R_Portfolio_Resume.html
 └── README.md
 ```
-
-## GitHub Pages deployment
-
-1. Push the repository to GitHub.
-2. Open **Settings → Pages**.
-3. Set the source to **Deploy from a branch**.
-4. Choose the `main` branch and the `/ (root)` folder.
-5. Save. GitHub Pages will publish the site at the live URL above.
 
 ## Contact
 
